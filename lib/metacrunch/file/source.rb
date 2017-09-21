@@ -2,7 +2,7 @@ require "metacrunch/file"
 require "rubygems/package"
 
 module Metacrunch
-  class File::Reader
+  class File::Source
 
     def initialize(filenames)
       @filenames = [*filenames].map{|f| f.presence}.compact
