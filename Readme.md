@@ -30,9 +30,9 @@ Usage
 
 *Note: For working examples on how to use this package check out our [demo repository](https://github.com/ubpb/metacrunch-demo).*
 
-### Source
+### `Metacrunch::File::Source`
 
-The `Metacrunch::File::Source` class can be used to read data from files in the file system into a metacrunch job. The class can be used to read regular files, compressed files (gzip), tar archives and compressed tar archives (gzip).
+This class provides a metacrunch `source` implementation that can be used to read data from files in the file system into a metacrunch job. The class can be used to read regular files, compressed files (gzip), tar archives and compressed tar archives (gzip).
 
 You can access non-option arguments from the command line using the `ARGV` constant.
 
