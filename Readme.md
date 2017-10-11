@@ -3,7 +3,8 @@ metacrunch-file
 
 [![Gem Version](https://badge.fury.io/rb/metacrunch-file.svg)](http://badge.fury.io/rb/metacrunch-file)
 [![Code Climate](https://codeclimate.com/github/ubpb/metacrunch-file/badges/gpa.svg)](https://codeclimate.com/github/ubpb/metacrunch-file)
-[![Build Status](https://travis-ci.org/ubpb/metacrunch-file.svg)](https://travis-ci.org/ubpb/metacrunch-file)
+[![Test Coverage](https://codeclimate.com/github/ubpb/metacrunch-file/badges/coverage.svg)](https://codeclimate.com/github/ubpb/metacrunch-file/coverage)
+[![CircleCI](https://circleci.com/gh/ubpb/metacrunch-file.svg?style=svg)](https://circleci.com/gh/ubpb/metacrunch-file)
 
 This is the official file package for the [metacrunch ETL toolkit](https://github.com/ubpb/metacrunch).
 
@@ -65,4 +66,9 @@ transformation ->(file_entry) do
   puts "  Contents: #{file_entry.contents}"
 end
 ```
+
+License
+-------
+
+metacrunch-file is available at [github](https://github.com/ubpb/metacrunch-file) under [MIT license](https://github.com/ubpb/metacrunch-file/blob/master/License.txt).
 
