@@ -14,7 +14,7 @@ Installation
 Include the gem in your `Gemfile`
 
 ```ruby
-gem "metacrunch-file", "~> 1.0.0"
+gem "metacrunch-file", "~> 1.2.0"
 ```
 
 and run `$ bundle install` to install it.
@@ -67,12 +67,26 @@ transformation ->(file_entry) do
 end
 ```
 
+### `Metacrunch::File::Destination`
+
+This class provides a metacrunch `destination` to write data to a file. Every data that gets passed to the destination is appended to the given file. If the data is an `Array` every element of that array is appended to the file. Non existing files will be created automatically.
+
+```ruby
+# my_job.metacrunch
+
+source Metacrunch::File::Destination.new("/tmp/my-data.txt" [, OPTIONS])
+```
+
+**Options**
+
+* `override_existing_file`: Overrides an existing file if set to `true`. If set to `false` an error is raised if the file already exists. Defaults to `false`.
+* 
 
 ### `Metacrunch::File::XLSXDestination`
 
 This class provides a metacrunch `destination` implementation to create simple Excel (xlsx) files.
 
-To use this destination a transformation is required to format the data in a proper array that can be feet into the destination. When defining the destination you must provide an array of column names. Each data row passed to the destination must be an array of the same size as the column array.
+To use this destination a transformation is required to format the data in a proper array that can be passed to the destination. When defining the destination you must provide an array of column names. Each data row passed to the destination must be an array of the same size as the column array.
 
 ```ruby
 # my_job.metacrunch
