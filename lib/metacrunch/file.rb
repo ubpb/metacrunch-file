@@ -5,5 +5,6 @@ module Metacrunch
   module File
     require_relative "file/entry"
     require_relative "file/source"
+    require_relative "file/xlsx_destination"
   end
 end

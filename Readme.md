@@ -67,6 +67,31 @@ transformation ->(file_entry) do
 end
 ```
 
+
+### `Metacrunch::File::XLSXDestination`
+
+This class provides a metacrunch `destination` implementation to create simple Excel (xlsx) files.
+
+To use this destination a transformation is required to format the data in a proper array that can be feet into the destination. When defining the destination you must provide an array of column names. Each data row passed to the destination must be an array of the same size as the column array.
+
+```ruby
+# my_job.metacrunch
+
+transformation ->(data) do
+  [data["foo"], data["bar"], ...]
+end
+
+source Metacrunch::File::XLSXDestination.new(
+    "/tmp/my-data.xlsx",           # filename
+    ["Column 1", "Column 2", ...], # header columns
+    OPTIONS
+)
+```
+
+**Options**
+
+* `worksheet_title`: The name of the worksheet. Defaults to `My data`.
+
 License
 -------
 
