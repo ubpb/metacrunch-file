@@ -74,7 +74,7 @@ This class provides a metacrunch `destination` to write data to a file. Every da
 ```ruby
 # my_job.metacrunch
 
-source Metacrunch::File::Destination.new("/tmp/my-data.txt" [, OPTIONS])
+destination Metacrunch::File::Destination.new("/tmp/my-data.txt" [, OPTIONS])
 ```
 
 **Options**
@@ -95,7 +95,7 @@ transformation ->(data) do
   [data["foo"], data["bar"], ...]
 end
 
-source Metacrunch::File::XLSXDestination.new(
+destination Metacrunch::File::XLSXDestination.new(
     "/tmp/my-data.xlsx",           # filename
     ["Column 1", "Column 2", ...], # header columns
     OPTIONS
