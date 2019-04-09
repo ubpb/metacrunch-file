@@ -17,4 +17,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "activesupport", ">= 5.1.0"
   spec.add_dependency "axlsx", ">= 3.0.0.pre"
+  spec.add_dependency "smarter_csv", "~> 1.2.6"
 end

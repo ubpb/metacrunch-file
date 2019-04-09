@@ -80,6 +80,18 @@ destination Metacrunch::File::FileDestination.new("/tmp/my-data.txt" [, OPTIONS]
 
 * `override_existing_file`: Overrides an existing file if set to `true`. If set to `false` an error is raised if the file already exists. Defaults to `false`.
 
+## `Metacrunch::File::CSVSource`
+
+This class provides a metacrunch `source` for reading CSV files. It is a simple wrapper around [smarter_csv](https://github.com/tilo/smarter_csv) gem. 
+
+**Options**
+
+* `headers`: Whether or not the file contains headers as the first line. Important if the file does not contain headers, otherwise you would lose the first line of data. Defaults to `true`.
+* `col_sep`: Column separator. Defaults to `,`.
+* `row_sep`: Row separator or record separator. Defaults to `\n`.
+* `quote_char`: Quotation character. Defaults to `"`.
+* `file_encoding`: Set the file encoding. Defaults to `utf-8`.
+
 ## `Metacrunch::File::XLSXDestination`
 
 This class provides a metacrunch `destination` implementation to create simple Excel (xlsx) files.
