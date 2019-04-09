@@ -1,14 +1,4 @@
-describe Metacrunch::File::Destination do
-
-  describe "#initialize" do
-    context "when called" do
-      it "prints a deprecation warning" do
-        expect {
-          Metacrunch::File::Destination.new(Tempfile.new, override_existing_file: true)
-        }.to output("[DEPRECATION] `Metacrunch::File::Destination` is deprecated.  Please use `Metacrunch::File::FileDestination` instead.\n").to_stderr
-      end
-    end
-  end
+describe Metacrunch::File::FileDestination do
 
   context "when data is an Array" do
     it "writes to a file" do
@@ -17,7 +7,7 @@ describe Metacrunch::File::Destination do
       begin
         data = (1..100).map { |number| "Number #{number}\n" }
 
-        destination = Metacrunch::File::Destination.new(tempfile, override_existing_file: true)
+        destination = Metacrunch::File::FileDestination.new(tempfile, override_existing_file: true)
         destination.write(data)
         destination.close
 
@@ -35,7 +25,7 @@ describe Metacrunch::File::Destination do
       begin
         data = (1..100).map { |number| "Number #{number}\n" }.join
 
-        destination = Metacrunch::File::Destination.new(tempfile, override_existing_file: true)
+        destination = Metacrunch::File::FileDestination.new(tempfile, override_existing_file: true)
         destination.write(data)
         destination.close
 
@@ -52,7 +42,7 @@ describe Metacrunch::File::Destination do
 
       begin
         expect{
-          Metacrunch::File::Destination.new(tempfile, override_existing_file: false)
+          Metacrunch::File::FileDestination.new(tempfile, override_existing_file: false)
         }.to raise_error(RuntimeError)
       ensure
         File.delete(tempfile)
