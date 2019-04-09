@@ -84,6 +84,12 @@ destination Metacrunch::File::FileDestination.new("/tmp/my-data.txt" [, OPTIONS]
 
 This class provides a metacrunch `source` for reading CSV files. It is a simple wrapper around [smarter_csv](https://github.com/tilo/smarter_csv) gem. 
 
+```ruby
+# my_job.metacrunch
+
+source Metacrunch::File::CSVSource.new("my.csv" [, OPTIONS])
+```
+
 **Options**
 
 * `headers`: Whether or not the file contains headers as the first line. Important if the file does not contain headers, otherwise you would lose the first line of data. Defaults to `true`.
