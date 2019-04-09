@@ -79,7 +79,6 @@ destination Metacrunch::File::FileDestination.new("/tmp/my-data.txt" [, OPTIONS]
 **Options**
 
 * `override_existing_file`: Overrides an existing file if set to `true`. If set to `false` an error is raised if the file already exists. Defaults to `false`.
-* 
 
 ## `Metacrunch::File::XLSXDestination`
 
