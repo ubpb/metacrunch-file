@@ -6,7 +6,10 @@ metacrunch-file
 [![Test Coverage](https://codeclimate.com/github/ubpb/metacrunch-file/badges/coverage.svg)](https://codeclimate.com/github/ubpb/metacrunch-file/coverage)
 [![CircleCI](https://circleci.com/gh/ubpb/metacrunch-file.svg?style=svg)](https://circleci.com/gh/ubpb/metacrunch-file)
 
-This is the official file package for the [metacrunch ETL toolkit](https://github.com/ubpb/metacrunch).
+This is the official file package for the [metacrunch ETL toolkit](https://github.com/ubpb/metacrunch). 
+
+*Note: For working examples on how to use this package check out our [demo repository](https://github.com/ubpb/metacrunch-demo).*
+
 
 Installation
 ------------
@@ -14,7 +17,7 @@ Installation
 Include the gem in your `Gemfile`
 
 ```ruby
-gem "metacrunch-file", "~> 1.2.0"
+gem "metacrunch-file", "~> 1.3.0"
 ```
 
 and run `$ bundle install` to install it.
@@ -29,13 +32,9 @@ $ gem install metacrunch-file
 Usage
 -----
 
-*Note: For working examples on how to use this package check out our [demo repository](https://github.com/ubpb/metacrunch-demo).*
-
-### `Metacrunch::File::Source`
+## `Metacrunch::File::FileSource`
 
 This class provides a metacrunch `source` implementation that can be used to read data from files in the file system into a metacrunch job. The class can be used to read regular files, compressed files (gzip), tar archives and compressed tar archives (gzip).
-
-You can access non-option arguments from the command line using the `ARGV` constant.
 
 ```ruby
 # my_job.metacrunch
@@ -43,10 +42,10 @@ You can access non-option arguments from the command line using the `ARGV` const
 # If you call this example like so
 #   $ metacrunch my_job.metacrunch *.xml
 # ARGV will contain all the XML files in the current directory.
-source Metacrunch::File::Source.new(ARGV)
+source Metacrunch::File::FileSource.new(ARGV)
 
 # ... or you can set the filenames directly
-source Metacrunch::File::Source.new(["my-data.xml", "my-other-data.xml", "..."])
+source Metacrunch::File::FileSource.new(["my-data.xml", "my-other-data.xml", "..."])
 ```
 
 **Options**
@@ -67,14 +66,14 @@ transformation ->(file_entry) do
 end
 ```
 
-### `Metacrunch::File::Destination`
+## `Metacrunch::File::FileDestination`
 
 This class provides a metacrunch `destination` to write data to a file. Every data that gets passed to the destination is appended to the given file. If the data is an `Array` every element of that array is appended to the file. Non existing files will be created automatically.
 
 ```ruby
 # my_job.metacrunch
 
-destination Metacrunch::File::Destination.new("/tmp/my-data.txt" [, OPTIONS])
+destination Metacrunch::File::FileDestination.new("/tmp/my-data.txt" [, OPTIONS])
 ```
 
 **Options**
@@ -82,7 +81,7 @@ destination Metacrunch::File::Destination.new("/tmp/my-data.txt" [, OPTIONS])
 * `override_existing_file`: Overrides an existing file if set to `true`. If set to `false` an error is raised if the file already exists. Defaults to `false`.
 * 
 
-### `Metacrunch::File::XLSXDestination`
+## `Metacrunch::File::XLSXDestination`
 
 This class provides a metacrunch `destination` implementation to create simple Excel (xlsx) files.
 
