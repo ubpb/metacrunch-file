@@ -2,7 +2,7 @@ describe Metacrunch::File::XLSXDestination do
 
   it "creates a XLSX file" do
     destination = Metacrunch::File::XLSXDestination.new(
-      "/tmp/metacrunch-xlsx-test.xlsx",
+      Tempfile.new,
       ["Number", "Foo", "Bar"],
       worksheet_title: "A cool title"
     )
