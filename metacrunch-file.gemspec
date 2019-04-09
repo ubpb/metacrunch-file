@@ -16,5 +16,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "activesupport", ">= 5.1.0"
-  spec.add_dependency "axlsx", "~> 2.0.1"
+  spec.add_dependency "axlsx", ">= 3.0.0.pre"
 end
