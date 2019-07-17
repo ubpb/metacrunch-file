@@ -20,9 +20,17 @@ module Metacrunch
       @sheet.add_row(columns, types: :string)
     end
 
-    def write(row)
-      return if row.blank?
-      @sheet.add_row(row, types: :string)
+    def write(data)
+      return if data.blank?
+      raise ArgumentError, "Data must be an Array" unless data.is_a?(Array)
+
+      if data.first.is_a?(Array)
+        data.each do |d|
+          @sheet.add_row(d, types: :string)
+        end
+      else
+        @sheet.add_row(data, types: :string)
+      end
     end
 
     def close
