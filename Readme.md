@@ -17,7 +17,7 @@ Installation
 Include the gem in your `Gemfile`
 
 ```ruby
-gem "metacrunch-file", "~> 1.3.0"
+gem "metacrunch-file", "~> 1.4.0"
 ```
 
 and run `$ bundle install` to install it.
