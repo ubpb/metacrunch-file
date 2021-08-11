@@ -10,5 +10,6 @@ module Metacrunch
     require_relative "file/file_destination"
     require_relative "file/destination"
     require_relative "file/xlsx_destination"
+    require_relative "file/csv_destination"
   end
 end

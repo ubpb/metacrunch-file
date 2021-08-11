@@ -17,7 +17,7 @@ Installation
 Include the gem in your `Gemfile`
 
 ```ruby
-gem "metacrunch-file", "~> 1.4.0"
+gem "metacrunch-file", "~> 1.5.0"
 ```
 
 and run `$ bundle install` to install it.
@@ -97,6 +97,25 @@ source Metacrunch::File::CSVSource.new("my.csv" [, OPTIONS])
 * `row_sep`: Row separator or record separator. Defaults to `\n`.
 * `quote_char`: Quotation character. Defaults to `"`.
 * `file_encoding`: Set the file encoding. Defaults to `utf-8`.
+
+## `Metacrunch::File::CSVDestination`
+
+This class provides a metacrunch `desination` for writing CSV files. Because [smarter_csv](https://github.com/tilo/smarter_csv) can only be used to read CSV, this class uses Ruby's [build in CSV feature](https://ruby-doc.org/stdlib/libdoc/csv/rdoc/CSV.html) under the hood.
+
+```ruby
+# my_job.metacrunch
+
+destination Metacrunch::File::CSVDestination.new(
+  "result.csv",                  # filename
+  ["Header 1", "Header 2", ...], # headers 
+  [, OPTIONS]
+)
+```
+
+**Options**
+
+* `override_existing_file`: Overrides an existing file if set to `true`. If set to `false` an error is raised if the file already exists. Defaults to `false`.
+* `csv_options`: Set options for CSV generation as `col_sep`. Full list is [here](https://ruby-doc.org/stdlib/libdoc/csv/rdoc/CSV.html#class-CSV-label-Options).
 
 ## `Metacrunch::File::XLSXDestination`
 
