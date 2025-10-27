@@ -6,7 +6,7 @@ metacrunch-file
 [![Test Coverage](https://codeclimate.com/github/ubpb/metacrunch-file/badges/coverage.svg)](https://codeclimate.com/github/ubpb/metacrunch-file/coverage)
 [![CircleCI](https://circleci.com/gh/ubpb/metacrunch-file.svg?style=svg)](https://circleci.com/gh/ubpb/metacrunch-file)
 
-This is the official file package for the [metacrunch ETL toolkit](https://github.com/ubpb/metacrunch). 
+This is the official file package for the [metacrunch ETL toolkit](https://github.com/ubpb/metacrunch).
 
 *Note: For working examples on how to use this package check out our [demo repository](https://github.com/ubpb/metacrunch-demo).*
 
@@ -52,7 +52,7 @@ source Metacrunch::File::FileSource.new(["my-data.xml", "my-other-data.xml", "..
 
 NONE.
 
-The source yields objects of type `Metacrunch::File::Entry` for every file it reads. 
+The source yields objects of type `Metacrunch::File::Entry` for every file it reads.
 
 ```ruby
 # my_job.metacrunch
@@ -105,7 +105,7 @@ This class provides a metacrunch `desination` for writing CSV files. Like the `C
 
 destination Metacrunch::File::CSVDestination.new(
   "result.csv",                  # filename
-  ["Header 1", "Header 2", ...], # headers 
+  ["Header 1", "Header 2", ...], # headers
   [, OPTIONS]
 )
 ```
