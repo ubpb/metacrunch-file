@@ -11,7 +11,7 @@ module Metacrunch
       @filename = ::File.expand_path(filename)
       @options = DEFAULT_OPTIONS.deep_merge(options)
 
-      if ::File.exists?(@filename) && @options[:override_existing_file] == false
+      if ::File.exist?(@filename) && @options[:override_existing_file] == false
         raise "File `#{@filename}` exists but `override_existing_file` option was set to `false`"
       end
 
