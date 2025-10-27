@@ -16,6 +16,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "activesupport", ">= 0"
-  spec.add_dependency "caxlsx", "~> 3.0"
+  spec.add_dependency "caxlsx", "~> 4.0"
   spec.add_dependency "smarter_csv", "~> 1.2"
 end
