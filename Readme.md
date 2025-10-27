@@ -87,14 +87,16 @@ This class provides a metacrunch `source` for reading CSV files. It is a simple 
 ```ruby
 # my_job.metacrunch
 
-source Metacrunch::File::CSVSource.new("my.csv" [, OPTIONS])
+source Metacrunch::File::CSVSource.new(
+  "source.csv" # filename
+  [, OPTIONS]) # options
 ```
 
 **Options**
 
 Using the `options` argument you can pass any [CSV reading option supported by smarter_csv](https://github.com/tilo/smarter_csv/blob/main/docs/options.md#csv-reading) using the key `csv_options`.
 
-* `csv_options`: Any option supported by smarter_csv for CVS reading. Our defaults are `headers_in_file: true`, `col_sep: ","`, `row_sep: "\n"`, `quote_char: '"'`, `file_encoding: "utf-8"`
+* `csv_options`: Hash with any option supported by smarter_csv for CVS reading. Our defaults are `headers_in_file: true`, `col_sep: ","`, `row_sep: "\n"`, `quote_char: '"'`, `file_encoding: "utf-8"`
 
 ## `Metacrunch::File::CSVDestination`
 
@@ -104,9 +106,8 @@ This class provides a metacrunch `desination` for writing CSV files. Like the `C
 # my_job.metacrunch
 
 destination Metacrunch::File::CSVDestination.new(
-  "result.csv",                  # filename
-  ["Header 1", "Header 2", ...], # headers
-  [, OPTIONS]
+  "result.csv" # filename
+  [, OPTIONS]  # options
 )
 ```
 
