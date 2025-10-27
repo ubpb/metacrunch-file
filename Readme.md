@@ -100,7 +100,7 @@ source Metacrunch::File::CSVSource.new("my.csv" [, OPTIONS])
 
 ## `Metacrunch::File::CSVDestination`
 
-This class provides a metacrunch `desination` for writing CSV files. Because [smarter_csv](https://github.com/tilo/smarter_csv) can only be used to read CSV, this class uses Ruby's [build in CSV feature](https://ruby-doc.org/stdlib/libdoc/csv/rdoc/CSV.html) under the hood.
+This class provides a metacrunch `desination` for writing CSV files. Like the `CSVSource` this uses [smarter_csv](https://github.com/tilo/smarter_csv) under the hood.
 
 ```ruby
 # my_job.metacrunch
