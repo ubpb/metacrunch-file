@@ -82,7 +82,7 @@ destination Metacrunch::File::FileDestination.new("/tmp/my-data.txt" [, OPTIONS]
 
 ## `Metacrunch::File::CSVSource`
 
-This class provides a metacrunch `source` for reading CSV files. It is a simple wrapper around [smarter_csv](https://github.com/tilo/smarter_csv) gem. 
+This class provides a metacrunch `source` for reading CSV files. It is a simple wrapper around [smarter_csv](https://github.com/tilo/smarter_csv) gem.
 
 ```ruby
 # my_job.metacrunch
@@ -92,11 +92,9 @@ source Metacrunch::File::CSVSource.new("my.csv" [, OPTIONS])
 
 **Options**
 
-* `headers`: Whether or not the file contains headers as the first line. Important if the file does not contain headers, otherwise you would lose the first line of data. Defaults to `true`.
-* `col_sep`: Column separator. Defaults to `,`.
-* `row_sep`: Row separator or record separator. Defaults to `\n`.
-* `quote_char`: Quotation character. Defaults to `"`.
-* `file_encoding`: Set the file encoding. Defaults to `utf-8`.
+Using the `options` argument you can pass any [CSV reading option supported by smarter_csv](https://github.com/tilo/smarter_csv/blob/main/docs/options.md#csv-reading) using the key `csv_options`.
+
+* `csv_options`: Any option supported by smarter_csv for CVS reading. Our defaults are `headers_in_file: true`, `col_sep: ","`, `row_sep: "\n"`, `quote_char: '"'`, `file_encoding: "utf-8"`
 
 ## `Metacrunch::File::CSVDestination`
 
