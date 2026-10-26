@@ -6,6 +6,11 @@ metacrunch-file
 [![Test Coverage](https://codeclimate.com/github/ubpb/metacrunch-file/badges/coverage.svg)](https://codeclimate.com/github/ubpb/metacrunch-file/coverage)
 [![CircleCI](https://circleci.com/gh/ubpb/metacrunch-file.svg?style=svg)](https://circleci.com/gh/ubpb/metacrunch-file)
 
+> **metacrunch-file belongs to metacrunch 4.x, and this repository is archived.** In metacrunch 5, `Metacrunch::Input`
+> and `Metacrunch::Output` in core read and write files, and the gems `metacrunch-csv` and `metacrunch-xlsx` replace
+> its CSV and XLSX parts; all of them live in the [metacrunch repository](https://github.com/ubpb/metacrunch).
+> metacrunch 5 is not released yet.
+
 This is the official file package for the [metacrunch ETL toolkit](https://github.com/ubpb/metacrunch).
 
 *Note: For working examples on how to use this package check out our [demo repository](https://github.com/ubpb/metacrunch-demo).*
